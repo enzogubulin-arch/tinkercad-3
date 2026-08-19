@@ -1,0 +1,22 @@
+// C++ code
+//
+const int pinoPIR = 7;
+const int pinoLED = 6;
+
+void setup() {
+  pinMode(pinoLED, OUTPUT);
+  pinMode(pinoPIR, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int estadoMovimento = digitalRead(pinoPIR);
+  
+  if (estadoMovimento == HIGH) {
+    digitalWrite(pinoLED, HIGH);
+  } else {
+    digitalWrite(pinoLED, LOW);
+  }
+  
+  delay(100);
+}
